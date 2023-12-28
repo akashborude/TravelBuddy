@@ -4,3 +4,13 @@
     width: 100%;
     max-width: 100%; /* ensure the image does not exceed its parent container */
 }
+
+/* event css */
+.container{
+    padding-top: 1%;
+    padding-bottom: 10%;
+}
+
+
+  
+  

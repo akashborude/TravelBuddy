@@ -1,0 +1,20 @@
+.logo {
+    max-height: 40px; /* Adjust the height of the logo as needed */
+  }
+  
+  .navbar {
+    padding: 10px; /* Adjust the padding as needed */
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1rem;
+  }
+  
