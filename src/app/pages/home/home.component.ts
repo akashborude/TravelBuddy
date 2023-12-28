@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
       description: "Description for Card 3",
       image: "../assets\\IMG_20220821_100515.jpg" // Replace with actual image file
     },
+    
     // Add more card objects as needed
   ];
 

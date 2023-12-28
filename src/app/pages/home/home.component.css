@@ -1,16 +1,52 @@
-.home-img{
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Image styles */
+  .home-img {
     object-fit: cover;
     height: 100%;
     width: 100%;
     max-width: 100%; /* ensure the image does not exceed its parent container */
-}
-
-/* event css */
-.container{
-    padding-top: 1%;
-    padding-bottom: 10%;
-}
-
-
+  }
   
+  /* Container styles */
+  .container {
+    padding-top: 1%;
+    padding-bottom: 5%; /* Adjusted padding for a more balanced look */
+  }
+  
+  /* Heading styles */
+  .heading {
+    padding: 2% 0; /* Adjusted padding for a more balanced look */
+    font-size: 2rem;
+    color: #1971FB; /* Linear color palette */
+  }
+  
+  /* "Show All" button styles */
+  .show-allButton {
+    float: right;
+    font-size: 1rem;
+    color: #1971FB;
+    border: none;
+    background-color: transparent;
+  }
+  
+  /* Upcoming Treks section styles */
+  .upcoming-treks {
+    margin-top: 2%; /* Adjusted margin for separation between sections */
+  }
+  
+  /* Card styles */
+  .careousel-item {
+    margin-bottom: 2%; /* Adjusted margin for separation between cards */
+  }
+  
+  /* Responsive styles using Bootstrap classes */
+  @media (max-width: 767px) {
+    .heading {
+      font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+  }
   

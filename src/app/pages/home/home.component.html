@@ -1,24 +1,116 @@
 <div>
-<img src="..\assets\IMG_20221028_173509.jpg" class="home-img">
+  <img src="..\assets\IMG_20221028_173509.jpg" class="home-img">
 </div>
 
-<div class="heading">
-<h3>Upcoming Treks</h3>
-</div>
 
 <div class="container">
+  <!-- Section 1: Image --
+
+  <!-- Section 2: Upcoming Treks -->
+  <div class="row">
+    <div class="col">
+      <div class="heading">
+        <h3>Upcoming Treks</h3>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button class="show-allButton">Show All</button>
+      </div>
+    </div>
+  </div>
+
   <div class="row upcoming-treks">
     <div *ngFor="let event of eventsData" class="col-md-4">
       <div class="careousel-item">
         <div class="card" style="width: 18rem;">
-            <img [src]="event.image" alt="card 1" class="img-1">
-            <div class="card-body">
-              <h2 class="card-title">{{event.title}}</h2>
-              <p class="card-des">{{event.description}}</p>
-            </div>
+          <img [src]="event.image" alt="card 1" class="img-1">
+          <div class="card-body">
+            <h2 class="card-title">{{event.title}}</h2>
+            <p class="card-des">{{event.description}}</p>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
+
+  <!-- Section 3: Camping Events -->
+  <div class="row">
+    <div class="col">
+      <div class="heading">
+        <h3>Camping Events</h3>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button class="show-allButton">Show All</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row upcoming-treks">
+    <div *ngFor="let event of eventsData" class="col-md-4">
+      <div class="careousel-item">
+        <div class="card" style="width: 18rem;">
+          <img [src]="event.image" alt="card 1" class="img-1">
+          <div class="card-body">
+            <h2 class="card-title">{{event.title}}</h2>
+            <p class="card-des">{{event.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Adventurous Events -->
+  <div class="row">
+    <div class="col">
+      <div class="heading">
+        <h3>Adventurous Events</h3>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button class="show-allButton">Show All</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row upcoming-treks">
+    <div *ngFor="let event of eventsData" class="col-md-4">
+      <div class="careousel-item">
+        <div class="card" style="width: 18rem;">
+          <img [src]="event.image" alt="card 1" class="img-1">
+          <div class="card-body">
+            <h2 class="card-title">{{event.title}}</h2>
+            <p class="card-des">{{event.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: Backpacking Events -->
+  <div class="row">
+    <div class="col">
+      <div class="heading">
+        <h3>Backpacking Events</h3>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button class="show-allButton">Show All</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row upcoming-treks">
+    <div *ngFor="let event of eventsData" class="col-md-4">
+      <div class="careousel-item">
+        <div class="card" style="width: 18rem;">
+          <img [src]="event.image" alt="card 1" class="img-1">
+          <div class="card-body">
+            <h2 class="card-title">{{event.title}}</h2>
+            <p class="card-des">{{event.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
