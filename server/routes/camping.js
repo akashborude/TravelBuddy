@@ -1,10 +1,10 @@
 // Import required modules
 const express = require("express");
 const router = express.Router();
-const Camping = require("../schema/camping");
+const Camping = require("../models/camping");
 
 // Get all camping data
-router.get("/", async (req, res) => {
+router.get("/getAllCamps", async (req, res) => {
   try {
     const campingData = await Camping.find();
     res.json(campingData);
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get a specific camping by ID
-router.get("/:id", async (req, res) => {
+router.get("/getCampById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const camp = await Camping.findById(id);
@@ -28,7 +28,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create a new camp
-router.post("/", async (req, res) => {
+router.post("/addNewCamp", async (req, res) => {
   const camp = new Camping(req.body);
   try {
     const newCamp = await camp.save();
@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
 });
 
 // Update a camp
-router.put("/:id", async (req, res) => {
+router.put("/updateCampById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const updatedCamp = await Camping.findByIdAndUpdate(id, req.body, { new: true });
@@ -53,7 +53,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a camp
-router.delete("/:id", async (req, res) => {
+router.delete("/deleteCampById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const deletedCamp = await Camping.findByIdAndDelete(id);

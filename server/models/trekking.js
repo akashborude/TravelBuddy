@@ -1,49 +1,50 @@
 const mongoose = require("mongoose");
 
 const trekkingSchema = new mongoose.Schema({
-  image: { type: String, required: true }, // Source URL for the image
-  title: { type: String, required: true },
+  image: { type: String }, // Source URL for the image
+  title: { type: String },
   date: {
-    start_date: { type: Date, required: true },
-    end_date: { type: Date, required: true },
+    start_date: { type: Date },
+    end_date: { type: Date },
   },
-  location: { type: String, required: true },
-  details: { type: String, required: true },
+  location: { type: String },
+  details: { type: String },
   upcoming_batches: [
     {
-      date: { type: Date, required: true },
-      available_slots: { type: Number, required: true },
-      booked_slots: { type: Number, required: true },
+      date: { type: Date },
+      available_slots: { type: Number },
+      booked_slots: { type: Number },
     },
   ],
   itinerary: [
     {
-      day: { type: Number, required: true },
-      description: { type: String, required: true },
+      day: { type: Number },
+      description: { type: String },
     },
   ],
   trek_event_details: {
-    difficultyLevel: { type: String, required: true },
-    baseVillageTrek: { type: String, required: true },
-    region: { type: String, required: true },
-    totalTimeOfTrek: { type: Number, required: true }, // Assuming it's in hours
-    duration: { type: Number, required: true }, // Assuming it's in days
+    difficultyLevel: { type: String },
+    baseVillageTrek: { type: String },
+    region: { type: String },
+    totalTimeOfTrek: { type: Number }, // Assuming it's in hours
+    duration: { type: Number }, // Assuming it's in days
   },
-  costInclude: [{ item: { type: String, required: true } }],
-  costExclude: [{ item: { type: String, required: true } }],
-  thingsToCarry: [{ item: { type: String, required: true } }],
+  costInclude: [{ item: { type: String } }],
+  costExclude: [{ item: { type: String } }],
+  thingsToCarry: [{ item: { type: String } }],
   pickUpPoints: {
-    pune: [{ location: { type: String, required: true } }],
-    mumbai: [{ location: { type: String, required: false } }],
+    pune: [{ location: { type: String } }],
+    mumbai: [{ location: { type: String } }],
   },
   faqs: [
     {
-      question: { type: String, required: true },
-      answer: { type: String, required: true },
+      question: { type: String },
+      answer: { type: String },
     },
   ],
   // Add more fields as per your requirements
 });
+
 
 const Trekking = mongoose.model("Trekking", trekkingSchema);
 

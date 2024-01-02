@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Backpacking = require("../schema/backpacking");
+const Backpacking = require("../models/backpacking");
 
 // Get all backpacking data
-router.get("/", async (req, res) => {
+router.get("/getAllBackpacks", async (req, res) => {
   try {
     const backpackingData = await Backpacking.find();
     res.json(backpackingData);
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get a specific backpacking event by ID
-router.get("/:id", async (req, res) => {
+router.get("/getBackpackById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const backpackingEvent = await Backpacking.findById(id);
@@ -27,7 +27,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create a new backpacking event
-router.post("/", async (req, res) => {
+router.post("/addNewBackpacking", async (req, res) => {
   const backpackingEvent = new Backpacking(req.body);
   try {
     const newBackpackingEvent = await backpackingEvent.save();
@@ -38,10 +38,14 @@ router.post("/", async (req, res) => {
 });
 
 // Update a backpacking event
-router.put("/:id", async (req, res) => {
+router.put("/updateBackpackById/:id", async (req, res) => {
   const id = req.params.id;
   try {
-    const updatedBackpackingEvent = await Backpacking.findByIdAndUpdate(id, req.body, { new: true });
+    const updatedBackpackingEvent = await Backpacking.findByIdAndUpdate(
+      id,
+      req.body,
+      { new: true }
+    );
     if (!updatedBackpackingEvent) {
       return res.status(404).json({ message: "Backpacking event not found" });
     }
@@ -52,7 +56,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete a backpacking event
-router.delete("/:id", async (req, res) => {
+router.delete("/deleteBackpackById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const deletedBackpackingEvent = await Backpacking.findByIdAndDelete(id);

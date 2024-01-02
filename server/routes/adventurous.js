@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Adventours = require("../schema/adventours"); // Import the Adventours model
+const Adventours = require("../models/adventurous"); // Import the Adventours model
 
 // Get all adventours data
-router.get("/", async (req, res) => {
+router.get("/getAllAdventure", async (req, res) => {
   try {
     const adventoursData = await Adventours.find();
     res.json(adventoursData);
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get a specific adventour by ID
-router.get("/:id", async (req, res) => {
+router.get("/getAdventureById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const adventour = await Adventours.findById(id);
@@ -27,7 +27,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create a new adventour
-router.post("/", async (req, res) => {
+router.post("/addNewAdventure", async (req, res) => {
   const newAdventour = new Adventours(req.body);
   try {
     const savedAdventour = await newAdventour.save();
@@ -38,10 +38,12 @@ router.post("/", async (req, res) => {
 });
 
 // Update an adventour
-router.put("/:id", async (req, res) => {
+router.put("/updateAdventureById/:id", async (req, res) => {
   const id = req.params.id;
   try {
-    const updatedAdventour = await Adventours.findByIdAndUpdate(id, req.body, { new: true });
+    const updatedAdventour = await Adventours.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
     if (!updatedAdventour) {
       return res.status(404).json({ message: "Adventour not found" });
     }
@@ -52,7 +54,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete an adventour
-router.delete("/:id", async (req, res) => {
+router.delete("/deleteAdventureById/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const deletedAdventour = await Adventours.findByIdAndDelete(id);
