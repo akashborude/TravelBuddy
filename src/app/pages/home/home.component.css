@@ -9,6 +9,7 @@ body {
     height: 100%;
     width: 100%;
     max-width: 100%; /* ensure the image does not exceed its parent container */
+    border-radius: 15px;
   }
   
   /* Container styles */
@@ -42,6 +43,7 @@ body {
   .careousel-item {
     margin-bottom: 2%; /* Adjusted margin for separation between cards */
   }
+
   
   /* Responsive styles using Bootstrap classes */
   @media (max-width: 767px) {

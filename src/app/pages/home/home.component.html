@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="row upcoming-treks">
+  <!-- <div class="row upcoming-treks">
     <div *ngFor="let event of eventsData" class="col-md-4">
       <div class="careousel-item">
         <div class="card" style="width: 18rem;">
@@ -31,7 +31,22 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <div class="carousel">
+    <div class="carousel-item" *ngFor="let event of eventsData">
+       <img [src]="event.image" alt="Trek Event Image">
+       <div class="carousel-info">
+         <h2>{{ event.title }}</h2>
+         <p>{{ event.description }}</p>
+         <div class="prize">
+           <h3>Prize:</h3>
+           <p>{{ event.prize }}</p>
+         </div>
+       </div>
+    </div>
+   </div>
+   
 
   
 

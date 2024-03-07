@@ -55,10 +55,21 @@ const Adventours = require("./models/adventurous");
 const Camping = require("./models/camping");
 const Backpacking = require("./models/backpacking");
 
+// CORS configuration
+app.use(
+  cors({
+    origin: "http://localhost:4200",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    optionsSuccessStatus: 204, // Added to handle preflight OPTIONS request
+  })
+);
+
+app.options("*", cors());
+
+// Body parser middleware
+app.use(bodyParser.json());
+
 // ...rest of your application setup
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-app.use(bodyParser.json());
-app.use(cors());
