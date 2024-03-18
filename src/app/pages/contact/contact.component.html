@@ -1,77 +1,31 @@
-<div class="container">
-    <p>Need help? We are here for you. To speak with our team you can call us or can use the contact form as well.
-        We will try to get back as soon as possible.
-    </p>
-    <h3 style="text-align: center;">General Support: +91 1234567890</h3>
-    <h3 style="text-align: center;">TravelBuddy Founder: +91 1234567890</h3>
-    <h3 style="text-align: center;">travelbuddy@gmail.com</h3>
-    <a [href]="whatsappLink" target="_blank" style="text-align: center;">TravelBuddy Whatsapp</a>
-</div>
-
-
-<!-- <section class="cmspage mtb-40">
-    <div class="container">
-      <div class="page-desc">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <h1>Contact</h1>
-            <form>
-              <div class="form-group">
-                <input type="text" name="name" id="name" placeholder="Name" required>
-              </div>
-              <div class="form-group">
-                <input type="text" name="email" id="email" placeholder="E-Mail" required email>
-                </div>
-              <div class="form-group">
-                <input type="text" name="phone" id="phone" placeholder="Phone">
-              </div>
-              <div class="form-group">
-                <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="form-group">
-                <button class="btn btn-success">Send Message</button>
-              </div>
-            </form>
-          </div>
-        </div>
+<div class="contact-form">
+  <h2 class="contact-form__title">Contact Us</h2>
+  <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+     <div class="form-group">
+       <label for="Email">Email</label>
+       <input type="email" class="form-control" name="Email" formControlName="Email" placeholder="Enter email">
+       <div *ngIf="FormData.controls['email'].errors!['pattern']">
+        Please enter a valid email.
+       </div>
+     </div>
+     <div class="form-group">
+       <label for="Fullname">Full Name</label>
+       <input type="text" class="form-control" name="Fullname" formControlName="Fullname" placeholder="Full Name">
+     </div>
+     <div class="form-group">
+      <label for="Mobile">Mobile Number</label>
+      <input type="text" class="form-control" name="Mobile" formControlName="Mobile" placeholder="Enter Mobile Number">
+      <div *ngIf="FormData.controls['Mobile'].invalid && FormData.controls['Mobile'].touched">
+         <div *ngIf="FormData.controls['Mobile'].errors!['required']">Mobile number is required.</div>
+         <div *ngIf="FormData.controls['Mobile'].errors!['pattern']">Please enter a valid 10 digit mobile number.</div>
       </div>
-    </div>
-  </section> -->
-
-  <div class="container">
-	<div class="row">
-			<h1>contact us</h1>
-	</div>
-	<div class="row">
-			<h4 style="text-align:center">We'd love to hear from you!</h4>
-	</div>
-	<div class="row input-container">
-			<div class="col-xs-12">
-				<div class="styled-input wide">
-					<input type="text" required />
-					<label>Name</label> 
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-12">
-				<div class="styled-input">
-					<input type="text" required />
-					<label>Email</label> 
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-12">
-				<div class="styled-input" style="float:right;">
-					<input type="text" required />
-					<label>Phone Number</label> 
-				</div>
-			</div>
-			<div class="col-xs-12">
-				<div class="styled-input wide">
-					<textarea required></textarea>
-					<label>Message</label>
-				</div>
-			</div>
-			<div class="col-xs-12">
-				<div class="btn-lrg submit-btn">Send Message</div>
-			</div>
-	</div>
-</div>
+     </div>
+     
+     <div class="form-group">
+       <label for="Comment">Comment</label>
+       <textarea class="form-control" formControlName="Comment" name="Comment" placeholder="Your message"></textarea>
+     </div>
+     <button type="submit" class="btn btn-primary" [disabled]="!FormData.valid">Submit</button>
+  </form>
+ </div>
+ 
