@@ -10,6 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { DestinationsComponent } from './pages/destinations/destinations.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DialogComponent } from './pages/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomeComponent,
     DestinationsComponent,
     AboutusComponent,
-    ContactComponent
+    ContactComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
