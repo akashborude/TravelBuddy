@@ -1,31 +1,26 @@
-<div class="contact-form">
-  <h2 class="contact-form__title">Contact Us</h2>
-  <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
-     <div class="form-group">
-       <label for="Email">Email</label>
-       <input type="email" class="form-control" name="Email" formControlName="Email" placeholder="Enter email">
-       <div *ngIf="FormData.controls['email'].errors!['pattern']">
-        Please enter a valid email.
-       </div>
-     </div>
-     <div class="form-group">
-       <label for="Fullname">Full Name</label>
-       <input type="text" class="form-control" name="Fullname" formControlName="Fullname" placeholder="Full Name">
-     </div>
-     <div class="form-group">
-      <label for="Mobile">Mobile Number</label>
-      <input type="text" class="form-control" name="Mobile" formControlName="Mobile" placeholder="Enter Mobile Number">
-      <div *ngIf="FormData.controls['Mobile'].invalid && FormData.controls['Mobile'].touched">
-         <div *ngIf="FormData.controls['Mobile'].errors!['required']">Mobile number is required.</div>
-         <div *ngIf="FormData.controls['Mobile'].errors!['pattern']">Please enter a valid 10 digit mobile number.</div>
+<div class="contact-page">
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+    <p>Feel free to reach out to us:</p>
+    <p>Phone: <a href="tel:+123456789">+1 (234) 567-89</a></p>
+    <p>WhatsApp: <a href="https://wa.me/123456789">+1 (234) 567-89</a></p>
+  </div>
+  <div class="contact-form">
+    <h2>Contact Us</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
       </div>
-     </div>
-     
-     <div class="form-group">
-       <label for="Comment">Comment</label>
-       <textarea class="form-control" formControlName="Comment" name="Comment" placeholder="Your message"></textarea>
-     </div>
-     <button type="submit" class="btn btn-primary" [disabled]="!FormData.valid">Submit</button>
-  </form>
- </div>
- 
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
