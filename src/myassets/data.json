@@ -1,0 +1,283 @@
+{
+    "image": "https://example.com/malvan.jpg",
+    "title": "Malvan-Tarkarli Backpacking trip",
+    "date": {
+        "start_date": "2024-04-19",
+        "end_date": "2024-04-22"
+    },
+    "location": "Malvan-Tarkarli Beach, Tal. Malvan Dis. Sindhudurg ",
+    "details": "Malvan Beach",
+    "upcoming_batches": [
+        {
+            "date": "2024-04-26",
+            "available_slots": 10,
+            "booked_slots": 5
+        },
+        {
+            "date": "2024-05-03",
+            "available_slots": 8,
+            "booked_slots": 2
+        }
+    ],
+    "attraction": [
+        {
+          "day": 1,
+          "item": "Scuba Diving at Tarkarli",
+          "item": "Parasailing",
+          "item" : "Jetski, Banana, bumper ride.",
+          "item" : "Sunset view at Rock Garden"
+        },
+        {
+          "day" : 2,
+            "item" : "Sunrise at Tarkarli Beach",
+            "item" : "Sindhudurg Fort",
+            "item" : "Devbagh Beach",
+            "item" : "Rajkot Fort",
+            "item" : "Tsunami Island"
+        }
+      ],
+    "itinerary": [
+        {
+            "day": 1,
+            "description": "Saturday Night Leave from Pune 09.00 pm Pickup First pickup 01 : Shivaji Nagar Infront of Maharashtra Bank Second Pickup 02 : Chandni chowk"
+        },
+        {
+            "day": 2,
+            "description" : "06:00 AM We Reach Malvan",
+            "description" : "07.00 AM Check-in for Room & have Breakfast",
+            "description" : "09:00 AM Leave for Malvan Chivla beach for Water sports",
+            "description" : "10:00 AM Water Sport Registration",
+            "description" : "11:00 AM Doing Watersports Activities",
+            "description" : "03:00 PM Back to Hotel freshnup and get Lunch and Take Rest",
+            "description" : "05:30 PM Travel to Rock Garden",
+            "description" : "06:30 PM Sunset View Rock Garden Beach Side",
+            "description" : "07:00 PM Group Activities on Beach Side",
+            "description" : "08:00 PM Back to Hotel",
+            "description" : "09:00 PM Dinner",
+            "description" : "10:30 PM Sleep"
+        },
+        {
+            "day" : 3,
+            "description" : "06:00 AM Wake up call",
+            "description" : "06:30 AM Going to Tarkarli Beach for Sunrise",
+            "description" : "08:30 AM Back to Hotel and take Breakfast",
+            "description" : "09:30 AM Check out from Hotel and Leave for Sindhudurg Fort",
+            "description" : "11:00 AM Reach Sindhudurg fort",
+            "description" : "02:00 PM Take Lunch",
+            "description" : "03:30 PM Leave for Tsunami Island",
+            "description" : "05:00 PM Start Return Journey with Beautiful Memories",
+            "description" : "10:00 PM Reach Kolhapur",
+            "description" : "10:30 PM Dinner at Kolhapur (Not Include in Cost)",
+            "description" : "Start Return Journey to Pune / Mumbai"
+
+        },
+        {
+            "day" : 4,
+            "description" : "Return Monday Early Morning Till 5.00 AM Max 05:00 AM : Reach Pune , Max 10:00 AM : Reach Mumbai"
+        }
+        
+    ],
+    "trek_event_details": {
+        "difficultyLevel": "Easy",
+        "baseVillageTrek": "Malvan-Tarkarli Beach",
+        "region": "Sindhudurg",
+        "duration": "2 Night 3 Day"
+    },
+    "costInclude": [
+        {
+            "item": "Travelling by Non AC private bus"
+        },
+        {
+            "item": "Two Breakfast and Tea"
+        },
+        {
+            "item": "Two Lunch - Veg"
+        },
+        {
+            "item" : "One Dinner - Veg/NonVeg"
+        },
+        {
+            "item" : "Home Stay Rooms - 03 person sharing"
+        },
+        {
+            "item" : "05 Water Activities (With Best Trained Guides)(Scuba, Parasailing, Bumper Ride, Jetski Ride & Banana Ride)"
+        },
+        {
+            "item" : "Rock Garden Tickets"
+        },
+        {
+            "item" : "Sindhudurg Fort Tickets"
+        },
+        {
+            "item" : "First-aid Kit"
+        },
+        {
+            "item" : "Expertise"
+        },
+        {
+            "item" : "Trek Guide"
+        }
+ 
+    ],
+
+    "costExclude": [
+        {
+            "item": "Dinner (Our captains will provide you with the best options we can offer you)"
+        },
+        {
+            "item": "Any tea/breakfast expenses you take over the travel breaks"
+        },
+        {
+            "item" : "Water Bottles"
+        }
+
+    ],
+
+    "thingsToCarry": [
+        {
+            "item" : "Most Important your ID proof"
+        },
+        {
+            "item": "Full pants and full sleeves t-shirts to protect from tanning, thorns, insects during the trek"
+        },
+        {
+            "item": "Snacks (Energy bars, Chikki, Biscuits, Sprouts, Chips, Dry fruits)"
+        },
+        {
+            "item": "Glucon-D/Protein shakes/ORS"
+        },
+        {
+            "item" : "Extra pair of clothes"
+        },
+        {
+            "item" : "Towel"
+        },
+        {
+            "item" : "Personal medicines if any"
+        },
+        {
+            "item" : "Shoes / Chappal"
+        },
+        {
+            "item" : "Suncap or Sunscreen"
+        },
+        {
+            "item" : "Please carry a  Jacket & cover your phones also in a plastic cover"
+        }
+    ],
+
+    "pickUpPoints": {
+        "pune": [
+            {
+                "location": "Chhatrapati Shivaji Maharaj bus stop (Shivajinagar Pune) In front of Bank of Maharashtra"
+            },
+            {
+                "location": "Deccan"
+            },
+            {
+                "location" : "Swargate"
+            },
+            {
+                "location" : "Nawale Bridge"
+            }
+        ],
+        "mumbai": [
+            {
+                "location": "Borivali west"
+            },
+            {
+                "location" : "Borivali East"
+            },
+            {
+                "location" : "Kandivali East"
+            },
+            {
+                "location" : "Malad East"
+            },
+            {
+                "location" : "Goregaon East"
+            },
+            {
+                "location" : "Jogeshwari East"
+            },
+            {
+                "location" : "Andheri East"
+            },
+            {
+                "location" : "Ville Parle East"
+            },
+            {
+                "location" : "Santacruz East"
+            },
+            {
+                "location" : "Bandra East"
+            },
+            {
+                "location" : "Sion"
+            },
+            {
+                "location" : "Chembur West"
+            },
+            {
+                "location" : "Chembur East"
+            },
+            {
+                "location" : "Vashi Toll Plaza"
+            },
+            {
+                "location" : "Nerul"
+            },
+            {
+                "location" : "Belapur CBD"
+            },
+            {
+                "location" : "Kharghar"
+            },
+            {
+                "location" : "Kalamboli - Near MCDonald"
+            }
+        ]
+    },
+    "faqs": [
+        {
+            "question" : "Do we need to know swimming for Water activities ?",
+            "answer" : "There is no such requirement as our experts will be there with you for help"
+        },
+        {
+            "question": "Is this trek safe for girls?",
+            "answer": "This trek is completely safe for girls. We have girl volunteers specially appointed for girls. And have separate changing rooms."
+        },
+        {
+            "question": "How many trek leaders will be available?",
+            "answer": "There will be 01 trek leader available for a group of 8 people in each trek."
+        },
+        {
+            "question": "How do I get in touch with trek leaders and trek groups ?",
+            "answer": "We add participants in our Whatsapp group one day prior to the event."
+        },
+        {
+            "question" : "Can I cancel my booking?",
+            "answer" : "You can check our cancel policy for the same. Or you can join us on the next trek (please inform us before 2 days)"
+        },
+        {
+            "question" : "What is prohibited in this trek?",
+            "answer" : "Smoking, Drinking and undesclipined behaviour is prohibited"
+        },
+        {
+            "question" : "Are changing rooms provided?",
+            "answer" : "Yes, separate (Male/Female) changing rooms are provided."
+        },
+        {
+            "question" : "What is the type of bus ?",
+            "answer" : "The bus is NON/AC Tempo Traveler with decent seating comfort."
+        },
+        {
+            "question" : "Are washrooms available on the trek?",
+            "answer" : "Washrooms are available at the base village only. No facility is available during the trek."
+        },
+        {
+            "question" : "Pick up points",
+            "answer" : "Pick up is available if your location comes in between our route for this you have to contact us before."
+        }
+    ]
+}

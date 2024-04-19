@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Adventours = require("../models/adventurous"); // Import the Adventours model
 
+
+router.get("/aditya", function(req , res){
+  console.log("Hello");
+  res.json({});
+})
 // Get all adventours data
 router.get("/getAllAdventure", async (req, res) => {
   try {
@@ -28,6 +33,7 @@ router.get("/getAdventureById/:id", async (req, res) => {
 
 // Create a new adventour
 router.post("/addNewAdventure", async (req, res) => {
+  console.log(req.body);
   const newAdventour = new Adventours(req.body);
   try {
     const savedAdventour = await newAdventour.save();

@@ -3,13 +3,24 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
-
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
+// CORS configuration
+app.use(
+  cors({
+    origin: "http://localhost:4200",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    optionsSuccessStatus: 204, // Added to handle preflight OPTIONS request
+  })
+);
+
+app.options("*", cors());
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017", {
+  .connect("mongodb://localhost:27017/TravelBuddy", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -22,7 +33,7 @@ mongoose
   });
 
 // Routes for Trekking
-app.post("/addNewTrek", require("./routes/trekking"));
+app.post("/addNewTrek",require("./routes/trekking"));
 app.get("/getAllTreks", require("./routes/trekking"));
 app.get("/getTrekById/:id", require("./routes/trekking"));
 app.put("/updateTrekById/:id", require("./routes/trekking"));
@@ -36,8 +47,8 @@ app.put("/updateCampById/:id", require("./routes/camping"));
 app.delete("/deleteCampById/:id", require("./routes/camping"));
 
 // Routes for Adventurous Activities
-app.post("/addNewAdventures", require("./routes/adventurous"));
-app.get("/getAllAdventures", require("./routes/adventurous"));
+app.post("/addNewAdventure", require("./routes/adventurous"));
+app.get("/getAllAdventure", require("./routes/adventurous"));
 app.get("/getAdventureById/:id", require("./routes/adventurous"));
 app.put("/updateAdventureById/:id", require("./routes/adventurous"));
 app.delete("/deleteAdventureById/:id", require("./routes/adventurous"));
@@ -55,19 +66,8 @@ const Adventours = require("./models/adventurous");
 const Camping = require("./models/camping");
 const Backpacking = require("./models/backpacking");
 
-// CORS configuration
-app.use(
-  cors({
-    origin: "http://localhost:4200",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    optionsSuccessStatus: 204, // Added to handle preflight OPTIONS request
-  })
-);
 
-app.options("*", cors());
 
-// Body parser middleware
-app.use(bodyParser.json());
 
 // ...rest of your application setup
 app.listen(PORT, () => {

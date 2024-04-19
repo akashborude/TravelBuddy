@@ -29,6 +29,7 @@ router.get("/getTrekById/:id", async (req, res) => {
 
 // Create a new trek
 router.post("/addNewTrek", async (req, res) => {
+  console.log(req.body);
   const newTrek = new Trekking(req.body);
   try {
     const savedTrek = await newTrek.save();

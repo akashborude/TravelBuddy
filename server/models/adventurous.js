@@ -16,6 +16,13 @@ const adventoursSchema = new mongoose.Schema({
       booked_slots: { type: Number, required: true },
     },
   ],
+  attraction : [
+    {
+      day : {type : String, required : true},
+      item : {type : String, required : true}
+    }
+  ],
+
   itinerary: [
     {
       day: { type: Number, required: true },
@@ -26,8 +33,8 @@ const adventoursSchema = new mongoose.Schema({
     difficultyLevel: { type: String, required: true },
     baseVillageTrek: { type: String, required: true },
     region: { type: String, required: true },
-    totalTimeOfTrek: { type: Number, required: true }, // Assuming it's in hours
-    duration: { type: Number, required: true }, // Assuming it's in days
+    totalTimeOfTrek: { type: String, required: false }, // Assuming it's in hours
+    duration: { type: String, required: true }, // Assuming it's in days
   },
   costInclude: [{ item: { type: String, required: true } }],
   costExclude: [{ item: { type: String, required: true } }],

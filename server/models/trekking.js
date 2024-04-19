@@ -26,8 +26,8 @@ const trekkingSchema = new mongoose.Schema({
     difficultyLevel: { type: String },
     baseVillageTrek: { type: String },
     region: { type: String },
-    totalTimeOfTrek: { type: Number }, // Assuming it's in hours
-    duration: { type: Number }, // Assuming it's in days
+    totalTimeOfTrek: { type: String }, // Assuming it's in hours
+    duration: { type: String }, // Assuming it's in days
   },
   costInclude: [{ item: { type: String } }],
   costExclude: [{ item: { type: String } }],
@@ -49,3 +49,4 @@ const trekkingSchema = new mongoose.Schema({
 const Trekking = mongoose.model("Trekking", trekkingSchema);
 
 module.exports = Trekking;
+
