@@ -1,128 +1,89 @@
 {
-    "image": "https://example.com/malvan.jpg",
-    "title": "Malvan-Tarkarli Backpacking trip",
+    "image": "https://example.com/Panshet.jpg",
+    "title": "Panshet Lake Side Camping ",
     "date": {
-        "start_date": "2024-04-19",
-        "end_date": "2024-04-22"
+        "start_date": "2024-05-04",
+        "end_date": "2024-05-05"
     },
-    "location": "Malvan-Tarkarli Beach, Tal. Malvan Dis. Sindhudurg ",
-    "details": "Malvan Beach",
+    "location": "Panshet Dam Dis. Pune",
+    "details": "Looking for a chilling and rocking weekend come join us for thrilling experience .Cool breeze and a tent beside you with your friends and a bonfire to make it special evening and karaoke and ghost stories",
     "upcoming_batches": [
         {
-            "date": "2024-04-26",
+            "date": "2024-05-04",
             "available_slots": 10,
             "booked_slots": 5
         },
         {
-            "date": "2024-05-03",
+            "date": "2024-05-11",
             "available_slots": 8,
             "booked_slots": 2
         }
     ],
-    "attraction": [
-        {
-          "day": 1,
-          "item": "Scuba Diving at Tarkarli",
-          "item": "Parasailing",
-          "item" : "Jetski, Banana, bumper ride.",
-          "item" : "Sunset view at Rock Garden"
-        },
-        {
-          "day" : 2,
-            "item" : "Sunrise at Tarkarli Beach",
-            "item" : "Sindhudurg Fort",
-            "item" : "Devbagh Beach",
-            "item" : "Rajkot Fort",
-            "item" : "Tsunami Island"
-        }
-      ],
     "itinerary": [
         {
             "day": 1,
-            "description": "Saturday Night Leave from Pune 09.00 pm Pickup First pickup 01 : Shivaji Nagar Infront of Maharashtra Bank Second Pickup 02 : Chandni chowk"
+            "description" : "04:00 PM : Reach Campsite",
+            "description" : "04:30 PM : Evening Snacks",
+            "description" : "05:30 PM : Lakeside Chilling",
+            "description" : "05:30 PM : Fun Activities",
+            "description" : "06:30 PM : Enjoy the camp night with your friends & love ones.",
+            "description" : "07:00 PM : Prepare for a night under the sky, play a few games, share stories (especially your ghost stories), make new friends and enjoy the campfire and lot more",
+            "description" : "08:00 PM : BBQ and Music ",
+            "description" : "10:30 PM : Dinner and enjoy the winters with bonfire ",
+            "description" : "12:00 AM : Ghost stories",
+            "description" : "01:00 AM : Off to sleep ( who are sleepy)"
         },
         {
             "day": 2,
-            "description" : "06:00 AM We Reach Malvan",
-            "description" : "07.00 AM Check-in for Room & have Breakfast",
-            "description" : "09:00 AM Leave for Malvan Chivla beach for Water sports",
-            "description" : "10:00 AM Water Sport Registration",
-            "description" : "11:00 AM Doing Watersports Activities",
-            "description" : "03:00 PM Back to Hotel freshnup and get Lunch and Take Rest",
-            "description" : "05:30 PM Travel to Rock Garden",
-            "description" : "06:30 PM Sunset View Rock Garden Beach Side",
-            "description" : "07:00 PM Group Activities on Beach Side",
-            "description" : "08:00 PM Back to Hotel",
-            "description" : "09:00 PM Dinner",
-            "description" : "10:30 PM Sleep"
-        },
-        {
-            "day" : 3,
-            "description" : "06:00 AM Wake up call",
-            "description" : "06:30 AM Going to Tarkarli Beach for Sunrise",
-            "description" : "08:30 AM Back to Hotel and take Breakfast",
-            "description" : "09:30 AM Check out from Hotel and Leave for Sindhudurg Fort",
-            "description" : "11:00 AM Reach Sindhudurg fort",
-            "description" : "02:00 PM Take Lunch",
-            "description" : "03:30 PM Leave for Tsunami Island",
-            "description" : "05:00 PM Start Return Journey with Beautiful Memories",
-            "description" : "10:00 PM Reach Kolhapur",
-            "description" : "10:30 PM Dinner at Kolhapur (Not Include in Cost)",
-            "description" : "Start Return Journey to Pune / Mumbai"
-
-        },
-        {
-            "day" : 4,
-            "description" : "Return Monday Early Morning Till 5.00 AM Max 05:00 AM : Reach Pune , Max 10:00 AM : Reach Mumbai"
-        }
-        
+            "description" : "08:00 AM Wake up call, get refreshed by a hot cup of tea & beautiful sunrise.",
+            "description" : "08:30 AM : Breakfast and Tea",
+            "description" : "09:00 AM : Move towards lakeside, those who would like to do. Others can enjoy their morning at Campsite. ",
+            "description" : "11:00 AM : Check out from the campsite nomad!!! Back to city life."
+        }   
     ],
-    "trek_event_details": {
+    "camp_event_details": {
         "difficultyLevel": "Easy",
-        "baseVillageTrek": "Malvan-Tarkarli Beach",
-        "region": "Sindhudurg",
-        "duration": "2 Night 3 Day"
+        "baseVillageCamp": "Pawana Dam Tal. Maval Dis. Pune",
+        "region": "Maval",
+        "totalTimeOfCamp" : "00",
+        "duration": "1 Night 1 Day"
     },
     "costInclude": [
         {
-            "item": "Travelling by Non AC private bus"
+            "item": "Welcome Snacks & Tea"            
         },
         {
-            "item": "Two Breakfast and Tea"
+            "item": "Tent Stay & Bedding "
         },
         {
-            "item": "Two Lunch - Veg"
+            "item" : "Unlimited Dinner (Veg/Non Veg)"
         },
         {
-            "item" : "One Dinner - Veg/NonVeg"
+            "item" : "BBQ (Limited)"
         },
         {
-            "item" : "Home Stay Rooms - 03 person sharing"
+            "item" : "Music / Live Music"
         },
         {
-            "item" : "05 Water Activities (With Best Trained Guides)(Scuba, Parasailing, Bumper Ride, Jetski Ride & Banana Ride)"
+            "item" : "Campfire with Music System & Dancing"
         },
         {
-            "item" : "Rock Garden Tickets"
+            "item" : "Morning Breakfast"
         },
         {
-            "item" : "Sindhudurg Fort Tickets"
+            "item" : "Adventure activities (Archery, Dart Game,Cricket, Football , Badminton, Carom, volleyball & More."
         },
         {
-            "item" : "First-aid Kit"
+            "item" : "Free Parking"
         },
         {
-            "item" : "Expertise"
-        },
-        {
-            "item" : "Trek Guide"
+            "item" : "Boating ( Rs. 250/- Charge)"
         }
- 
     ],
 
     "costExclude": [
         {
-            "item": "Dinner (Our captains will provide you with the best options we can offer you)"
+            "item": "Travelling"
         },
         {
             "item": "Any tea/breakfast expenses you take over the travel breaks"
@@ -138,146 +99,70 @@
             "item" : "Most Important your ID proof"
         },
         {
-            "item": "Full pants and full sleeves t-shirts to protect from tanning, thorns, insects during the trek"
+            "item": "Warm clothing"
         },
         {
-            "item": "Snacks (Energy bars, Chikki, Biscuits, Sprouts, Chips, Dry fruits)"
+            "item": "Good shoes, extra pair of socks."
         },
         {
-            "item": "Glucon-D/Protein shakes/ORS"
+            "item": "Torch with an extra battery (Must)"
         },
         {
-            "item" : "Extra pair of clothes"
+            "item" : "A bottle of water (at least 1 Ltrs)"
         },
         {
-            "item" : "Towel"
+            "item" : "Some are ready to eat food. cakes,lays, Biscuits, etc."
         },
         {
             "item" : "Personal medicines if any"
         },
         {
-            "item" : "Shoes / Chappal"
+            "item" : "Sleeping bags if needed (optional)"
         },
         {
-            "item" : "Suncap or Sunscreen"
+            "item" : "Pleases do not carry sling bags"
         },
         {
-            "item" : "Please carry a  Jacket & cover your phones also in a plastic cover"
+            "item" : "Please avoid wearing Gold and other orna"
         }
     ],
 
-    "pickUpPoints": {
-        "pune": [
-            {
-                "location": "Chhatrapati Shivaji Maharaj bus stop (Shivajinagar Pune) In front of Bank of Maharashtra"
-            },
-            {
-                "location": "Deccan"
-            },
-            {
-                "location" : "Swargate"
-            },
-            {
-                "location" : "Nawale Bridge"
-            }
-        ],
-        "mumbai": [
-            {
-                "location": "Borivali west"
-            },
-            {
-                "location" : "Borivali East"
-            },
-            {
-                "location" : "Kandivali East"
-            },
-            {
-                "location" : "Malad East"
-            },
-            {
-                "location" : "Goregaon East"
-            },
-            {
-                "location" : "Jogeshwari East"
-            },
-            {
-                "location" : "Andheri East"
-            },
-            {
-                "location" : "Ville Parle East"
-            },
-            {
-                "location" : "Santacruz East"
-            },
-            {
-                "location" : "Bandra East"
-            },
-            {
-                "location" : "Sion"
-            },
-            {
-                "location" : "Chembur West"
-            },
-            {
-                "location" : "Chembur East"
-            },
-            {
-                "location" : "Vashi Toll Plaza"
-            },
-            {
-                "location" : "Nerul"
-            },
-            {
-                "location" : "Belapur CBD"
-            },
-            {
-                "location" : "Kharghar"
-            },
-            {
-                "location" : "Kalamboli - Near MCDonald"
-            }
-        ]
-    },
     "faqs": [
         {
-            "question" : "Do we need to know swimming for Water activities ?",
-            "answer" : "There is no such requirement as our experts will be there with you for help"
+            "question": "Is drinking and smoking allowed?",
+            "answer": "We don’t encourage campers for such activities. It is allowed but please note you should carry your own items and will be liable to take the responsibility for any kind of damage caused during the activity."
         },
         {
-            "question": "Is this trek safe for girls?",
-            "answer": "This trek is completely safe for girls. We have girl volunteers specially appointed for girls. And have separate changing rooms."
+            "question": "Is Jain food available?",
+            "answer": "Yes, it is available but one needs to contact us in advance while booking to check the availability of the same."
         },
         {
-            "question": "How many trek leaders will be available?",
-            "answer": "There will be 01 trek leader available for a group of 8 people in each trek."
+            "question": "Is this camping available for couples and families?",
+            "answer": "Yes, we invite couples and families along with childrens for camping to have a friendly and memorable event with us."
         },
         {
-            "question": "How do I get in touch with trek leaders and trek groups ?",
-            "answer": "We add participants in our Whatsapp group one day prior to the event."
+            "question" : "Is transportation available for camping?",
+            "answer" : "No, transportation is not included. We can arrange for the same if required by customers for a large group with some extra charges. Please contact our customer care for more details."
         },
         {
             "question" : "Can I cancel my booking?",
-            "answer" : "You can check our cancel policy for the same. Or you can join us on the next trek (please inform us before 2 days)"
+            "answer" : "Cancellation is allowed only before 2 days of the event. Please note there is no refund if you cancel 1 day prior to the event."
         },
         {
-            "question" : "What is prohibited in this trek?",
-            "answer" : "Smoking, Drinking and undesclipined behaviour is prohibited"
+            "question" : "Is the camp safe for carrying pricey items?",
+            "answer" : "We recommend not to carry expensive and heavy materials. Please take care of your own belongings as we are not responsible for the same."
         },
         {
-            "question" : "Are changing rooms provided?",
-            "answer" : "Yes, separate (Male/Female) changing rooms are provided."
-        },
-        {
-            "question" : "What is the type of bus ?",
-            "answer" : "The bus is NON/AC Tempo Traveler with decent seating comfort."
+            "question" : "Do you have separate washrooms?",
+            "answer" : "Yes, we provide separate washrooms for both (male and female)."
         },
         {
             "question" : "Are washrooms available on the trek?",
             "answer" : "Washrooms are available at the base village only. No facility is available during the trek."
         },
         {
-            "question" : "Pick up points",
-            "answer" : "Pick up is available if your location comes in between our route for this you have to contact us before."
+            "question" : "Is there anything we should remember while joining the event ?",
+            "answer" : "Please carry your personal ID cards with you while coming for the event. And avoid heavy backpacks."
         }
     ]
 }

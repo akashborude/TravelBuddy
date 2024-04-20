@@ -26,16 +26,13 @@ const campingSchema = new mongoose.Schema({
     difficultyLevel: { type: String, required: true },
     baseVillageCamp: { type: String, required: true },
     region: { type: String, required: true },
-    totalTimeOfCamp: { type: Number, required: true }, // Assuming it's in hours
-    duration: { type: Number, required: true }, // Assuming it's in days
+    totalTimeOfCamp: { type: String, required: true }, // Assuming it's in hours
+    duration: { type: String, required: true }, // Assuming it's in days
   },
   costInclude: [{ item: { type: String, required: true } }],
   costExclude: [{ item: { type: String, required: true } }],
   thingsToCarry: [{ item: { type: String, required: true } }],
-  pickUpPoints: {
-    pune: [{ location: { type: String, required: true } }],
-    mumbai: [{ location: { type: String, required: false } }],
-  },
+ 
   faqs: [
     {
       question: { type: String, required: true },

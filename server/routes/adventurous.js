@@ -3,10 +3,6 @@ const router = express.Router();
 const Adventours = require("../models/adventurous"); // Import the Adventours model
 
 
-router.get("/aditya", function(req , res){
-  console.log("Hello");
-  res.json({});
-})
 // Get all adventours data
 router.get("/getAllAdventure", async (req, res) => {
   try {
