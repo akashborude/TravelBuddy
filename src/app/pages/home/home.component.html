@@ -13,11 +13,158 @@
         <h3>Upcoming Treks</h3>
       </div>
 
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4" *ngFor="let slide of slides.slice(currentSlide, currentSlide + 3); let i = index">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>{{ slide.title }}</h4>
+                    <p>{{ slide.description }}</p>
+                    <h3>{{slide.prize}}</h3>
+                    <a href="#" class="btn btn-primary">Book Now <i class="fa fa-angle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" (click)="prevSlide()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" (click)="nextSlide()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+      
+
       <div class="d-flex justify-content-end">
         <button class="show-allButton">Show All</button>
       </div>
     </div>
   </div>
+
+  <!-- Section 3: Camping Event -->
+  <div class="row">
+    <div class="col">
+      <div class="heading">
+        <h3>Camping Event</h3>
+      </div>
+
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4" *ngFor="let slide of slides.slice(currentSlide, currentSlide + 3); let i = index">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>{{ slide.title }}</h4>
+                    <p>{{ slide.description }}</p>
+                    <h3>{{slide.prize}}</h3>
+                    <a href="#" class="btn btn-primary">Book Now <i class="fa fa-angle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" (click)="prevSlide()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" (click)="nextSlide()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+      <!-- Section 4: Adventour Event -->
+  <div class="row">
+    <div class="col">
+      <div class="heading">
+        <h3>Adventour Event</h3>
+      </div>
+
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4" *ngFor="let slide of slides.slice(currentSlide, currentSlide + 3); let i = index">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>{{ slide.title }}</h4>
+                    <p>{{ slide.description }}</p>
+                    <h3>{{slide.prize}}</h3>
+                    <a href="#" class="btn btn-primary">Book Now <i class="fa fa-angle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" (click)="prevSlide()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" (click)="nextSlide()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+      <!-- Section 5: Backpacking Event -->
+  <div class="row">
+    <div class="col">
+      <div class="heading">
+        <h3>Backpacking Event</h3>
+      </div>
+
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4" *ngFor="let slide of slides.slice(currentSlide, currentSlide + 3); let i = index">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>{{ slide.title }}</h4>
+                    <p>{{ slide.description }}</p>
+                    <h3>{{slide.prize}}</h3>
+                    <a href="#" class="btn btn-primary">Book Now <i class="fa fa-angle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" (click)="prevSlide()">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" (click)="nextSlide()">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      
 
   <!-- <div class="row upcoming-treks">
     <div *ngFor="let event of eventsData" class="col-md-4">
@@ -33,25 +180,25 @@
     </div>
   </div> -->
 
-  <div class="carousel">
-    <div class="carousel-item" *ngFor="let event of eventsData">
-       <img [src]="event.image" alt="Trek Event Image">
+  <!-- <div class="carousel">
+    <div class="carousel-item" *ngFor="let event of slides">
+       <img [src]="event.items" alt="Trek Event Image">
        <div class="carousel-info">
-         <h2>{{ event.title }}</h2>
-         <p>{{ event.description }}</p>
+         <h2>{{ event.items }}</h2>
+         <p>{{ event.items }}</p>
          <div class="prize">
            <h3>Prize:</h3>
-           <p>{{ event.prize }}</p>
+           <p>{{ event.items }}</p>
          </div>
        </div>
     </div>
-   </div>
+   </div> -->
    
 
   
 
   <!-- Section 3: Camping Events -->
-  <div class="row">
+  <!-- <div class="row">
     <div class="col">
       <div class="heading">
         <h3>Camping Events</h3>
@@ -64,21 +211,21 @@
   </div>
 
   <div class="row upcoming-treks">
-    <div *ngFor="let event of eventsData" class="col-md-4">
+    <div *ngFor="let event of slides" class="col-md-4">
       <div class="careousel-item">
         <div class="card" style="width: 18rem;">
-          <img [src]="event.image" alt="card 1" class="img-1">
+          <img [src]="event.items" alt="card 1" class="img-1">
           <div class="card-body">
-            <h2 class="card-title">{{event.title}}</h2>
-            <p class="card-des">{{event.description}}</p>
+            <h2 class="card-title">{{event.items}}</h2>
+            <p class="card-des">{{event.items}}</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Section 4: Adventurous Events -->
-  <div class="row">
+  <!-- <div class="row">
     <div class="col">
       <div class="heading">
         <h3>Adventurous Events</h3>
@@ -91,21 +238,21 @@
   </div>
 
   <div class="row upcoming-treks">
-    <div *ngFor="let event of eventsData" class="col-md-4">
+    <div *ngFor="let event of slides" class="col-md-4">
       <div class="careousel-item">
         <div class="card" style="width: 18rem;">
-          <img [src]="event.image" alt="card 1" class="img-1">
+          <img [src]="event.items" alt="card 1" class="img-1">
           <div class="card-body">
-            <h2 class="card-title">{{event.title}}</h2>
-            <p class="card-des">{{event.description}}</p>
+            <h2 class="card-title">{{event.items}}</h2>
+            <p class="card-des">{{event.items}}</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Section 5: Backpacking Events -->
-  <div class="row">
+  <!-- <div class="row">
     <div class="col">
       <div class="heading">
         <h3>Backpacking Events</h3>
@@ -118,16 +265,16 @@
   </div>
 
   <div class="row upcoming-treks">
-    <div *ngFor="let event of eventsData" class="col-md-4">
+    <div *ngFor="let event of slides" class="col-md-4">
       <div class="careousel-item">
         <div class="card" style="width: 18rem;">
-          <img [src]="event.image" alt="card 1" class="img-1">
+          <img [src]="event.items" alt="card 1" class="img-1">
           <div class="card-body">
-            <h2 class="card-title">{{event.title}}</h2>
-            <p class="card-des">{{event.description}}</p>
+            <h2 class="card-title">{{event.items}}</h2>
+            <p class="card-des">{{event.items}}</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

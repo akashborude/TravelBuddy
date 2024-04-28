@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,56 +7,87 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  eventsData = [
+  slides = [
     {
-      title: 'Card 1',
-      description: 'Description for Card 1',
-      image: '../assets/IMG_20220821_094429.jpg', // Replace with actual image file
-      prize: '1200/-'
+      image: '../../../assets/Asset 1@300x-8.png',
+      title: 'Kalsubai Trek',
+      description: 'Description for Event 1',
+      prize : '1100/-'
     },
     {
-      title: 'Card 2',
-      description: 'Description for Card 2',
-      image: '../assets/IMG_20220821_100417.jpg', // Replace with actual image file
-      prize: '1400/-'
+      image: '../../../assets/Asset 1@300x-8.png',
+      title: 'Harishchandragad Trek',
+      description: 'Description for Event 2',
+      prize : '1100/-'
     },
     {
-      title: 'Card 3',
-      description: 'Description for Card 3',
-      image: '../assets\\IMG_20220821_100515.jpg', // Replace with actual image file
-      prize: '1699/-'
+      image: '../../../assets/Asset 1@300x-8.png',
+      title: 'Vasota Trek',
+      description: 'Description for Event 3',
+      prize : '1100/-'
     },
-
-    // Add more card objects as needed
+    {
+      image: '../../../assets/Asset 1@300x-8.png',
+      title: 'Malvan Tour',
+      description: 'Description for Event 4',
+      prize : '1100/-'
+    },
+    {
+      image: '../../../assets/Asset 1@300x-8.png',
+      title: 'Devkund Waterfall',
+      description: 'Description for Event 5',
+      prize : '1100/-'
+    },
+    {
+      image: '../../../assets/Asset 1@300x-8.png',
+      title: 'Kumbhe Waterfall',
+      description: 'Description for Event 6',
+      prize : '1100/-'
+    },
+    {
+      image: '../../../assets/Asset 1@300x-8.png',
+      title: 'Kalu Waterfall',
+      description: 'Description for Event 7',
+      prize : '1100/-'
+    }
   ];
 
-  constructor(private http: HttpClient) {}
+  currentSlide = 0;
+  slideIntervalSubscription: any = null; 
 
-  ngOnInit(): void {
-    this.getAlltreks();
+  ngOnInit() {
+    this.startSlideInterval();
   }
 
-  getAlltreks() {
-    const apiUrl = 'http://localhost:3000/getAllTreks'; // Replace with your actual API endpoint
+  ngOnDestroy() {
+    this.stopSlideInterval();
+  }
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      
+  startSlideInterval() {
+    this.slideIntervalSubscription = interval(5000).subscribe(() => {
+      this.nextSlide();
     });
+  }
 
-    const options = {
-      headers: headers,
-      withCredentials: true, // Enable sending cookies with the request
-    };
+  stopSlideInterval() {
+    if (this.slideIntervalSubscription) {
+      this.slideIntervalSubscription.unsubscribe();
+    }
+  }
 
-    this.http.get(apiUrl, options).subscribe(
-      (data: any) => {
-        // Assuming the API response is an array of objects similar to eventsData
-        this.eventsData = data;
-      },
-      (error) => {
-        console.error('Error fetching data:', error);
-      }
-    );
+  nextSlide() {
+    if (this.currentSlide < this.slides.length - 3) {
+      this.currentSlide++;
+    } else {
+      this.currentSlide = 0;
+    }
+  }
+
+  prevSlide() {
+    if (this.currentSlide > 0) {
+      this.currentSlide--;
+    } else {
+      this.currentSlide = this.slides.length - 3;
+    }
   }
 }
