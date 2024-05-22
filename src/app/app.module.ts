@@ -11,6 +11,7 @@ import { DestinationsComponent } from './pages/destinations/destinations.compone
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AddDataComponent } from './add-data/add-data.component';
+import { BookingpageComponent } from './pages/bookingpage/bookingpage.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AddDataComponent } from './add-data/add-data.component';
     DestinationsComponent,
     AboutusComponent,
     ContactComponent,
-    AddDataComponent
+    AddDataComponent,
+    BookingpageComponent
   ],
   imports: [
     BrowserModule,

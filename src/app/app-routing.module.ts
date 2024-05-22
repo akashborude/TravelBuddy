@@ -5,13 +5,15 @@ import { DestinationsComponent } from './pages/destinations/destinations.compone
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AddDataComponent } from './add-data/add-data.component';
+import { BookingpageComponent } from './pages/bookingpage/bookingpage.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'destinations', component: DestinationsComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'add-data',component:AddDataComponent}
+  {path: 'add-data',component:AddDataComponent},
+  {path: 'bookingpage', component:BookingpageComponent}
 ];
 
 @NgModule({

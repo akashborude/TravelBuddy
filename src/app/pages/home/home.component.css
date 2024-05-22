@@ -188,3 +188,7 @@ body {
     margin: 3px;
   }
 }
+
+.img-fluid{
+  object-fit: cover;
+}

@@ -1,0 +1,67 @@
+.trek-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .content {
+    flex: 1 1 60%;
+  }
+  
+  .sidebar {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  .date {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .book-now {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .book-now:hover {
+    background-color: darkorange;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .trek-details {
+      flex-direction: column;
+    }
+  
+    .content, .sidebar {
+      flex: 1 1 100%;
+    }
+  }
+  

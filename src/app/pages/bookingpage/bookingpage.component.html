@@ -1,0 +1,54 @@
+<div class="trek-details">
+    <div class="content">
+      <h2>{{ eventData.title }}</h2>
+      <p><strong>Date:</strong> {{ eventData.date.start_date | date }}</p>
+      <p><strong>Location:</strong> {{ eventData.location }}</p>
+      <p>{{ eventData.details }}</p>
+      <hr>
+      <h3>Upcoming Batches -</h3>
+      <ul>
+        <li *ngFor="let batch of eventData.upcoming_batches">
+          {{ batch.date | date }} (Available slots: {{ batch.available_slots }}, Booked slots: {{ batch.booked_slots }})
+        </li>
+      </ul>
+      <p>You can book any upcoming event by directly clicking on 'Book Now' Tab</p>
+      <hr>
+      <h3>Itinerary</h3>
+      <ul>
+        <li *ngFor="let item of eventData.itinerary">Day {{ item.day }}: {{ item.description }}</li>
+      </ul>
+      <hr>
+      <h3>Cost Include</h3>
+      <ul>
+        <li *ngFor="let inclusion of eventData.costInclude">{{ inclusion.item }}</li>
+      </ul>
+      <hr>
+      <h3>Cost Exclude</h3>
+      <ul>
+        <li *ngFor="let exclusion of eventData.costExclude">{{ exclusion.item }}</li>
+      </ul>
+      <hr>
+      <h3>Things to Carry</h3>
+      <ul>
+        <li *ngFor="let item of eventData.thingsToCarry">{{ item.item }}</li>
+      </ul>
+      <hr>
+      <h3>FAQs</h3>
+      <ul>
+        <li *ngFor="let faq of eventData.faqs">
+          <strong>{{ faq.question }}</strong> - {{ faq.answer }}
+        </li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <img [src]="eventData.image" [alt]="eventData.title">
+      <div class="card">
+        <div class="price">
+          <span>₹ {{ eventData.price }}/-</span> Per Person
+        </div>
+        <div class="date">{{ eventData.date.start_date | date }}</div>
+        <button class="book-now">BOOK NOW</button>
+      </div>
+    </div>
+  </div>
+  

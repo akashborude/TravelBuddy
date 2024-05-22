@@ -42,7 +42,9 @@ const backpackingSchema = new mongoose.Schema({
       answer: { type: String, required: true },
     },
   ],
-  // Add more fields as per your requirements
+
 });
 
 const Backpacking = mongoose.model("Backpacking", backpackingSchema);
+
+module.exports = Backpacking;
