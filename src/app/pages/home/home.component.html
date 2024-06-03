@@ -9,43 +9,7 @@
       <div class="heading">
         <h3>Upcoming Treks</h3>
       </div>
-
-      <div class="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div
-                class="col-md-4"
-                *ngFor="
-                  let slide of treks.slice(currentSlideTrek, currentSlideTrek + 3);
-                  let i = index
-                "
-              >
-                <div class="thumb-wrapper">
-                  <div class="img-box">
-                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid" />
-                  </div>
-                  <div class="thumb-content">
-                    <h4>{{ slide.title }}</h4>
-                    <p>{{ slide.details }}</p>
-                    <h3>{{ slide.location }}</h3>
-                    <a href="#" class="btn btn-primary" (click)="bookTrek(slide)">Book Now <i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" (click)="prevSlide('trek')">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" (click)="nextSlide('trek')">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
+      <app-carousel [slides]="treks"></app-carousel>
       <div class="d-flex justify-content-end">
         <button class="show-allButton">Show All</button>
       </div>
@@ -58,90 +22,17 @@
       <div class="heading">
         <h3>Camping Event</h3>
       </div>
-
-      <div class="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div
-                class="col-md-4"
-                *ngFor="
-                  let slide of camps.slice(currentSlideCamp, currentSlideCamp + 3);
-                  let i = index
-                "
-              >
-                <div class="thumb-wrapper">
-                  <div class="img-box">
-                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid" />
-                  </div>
-                  <div class="thumb-content">
-                    <h4>{{ slide.title }}</h4>
-                    <p>{{ slide.details }}</p>
-                    <h3>{{ slide.location }}</h3>
-                    <a href="#" class="btn btn-primary" (click)="bookCamp(slide)">Book Now <i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" (click)="prevSlide('camp')">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" (click)="nextSlide('camp')">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+      <app-carousel [slides]="camps"></app-carousel>
     </div>
   </div>
 
-  <!-- Section 4: Adventour Event -->
+  <!-- Section 4: Adventure Event -->
   <div class="row">
     <div class="col">
       <div class="heading">
-        <h3>Adventour Event</h3>
+        <h3>Adventure Event</h3>
       </div>
-
-      <div class="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div
-                class="col-md-4"
-                *ngFor="
-                  let slide of adventure.slice(
-                    currentSlideAdventure,
-                    currentSlideAdventure + 3
-                  );
-                  let i = index
-                "
-              >
-                <div class="thumb-wrapper">
-                  <div class="img-box">
-                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid" />
-                  </div>
-                  <div class="thumb-content">
-                    <h4>{{ slide.title }}</h4>
-                    <p>{{ slide.details }}</p>
-                    <h3>{{ slide.location }}</h3>
-                    <a href="#" class="btn btn-primary" (click)="bookAdventure(slide)">Book Now <i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" (click)="prevSlide('adventure')">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" (click)="nextSlide('adventure')">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+      <app-carousel [slides]="adventure"></app-carousel>
     </div>
   </div>
 
@@ -151,44 +42,7 @@
       <div class="heading">
         <h3>Backpacking Event</h3>
       </div>
-
-      <div class="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div
-                class="col-md-4"
-                *ngFor="
-                  let slide of backpacks.slice(
-                    currentSlideBackpack,
-                    currentSlideBackpack + 3
-                  );
-                  let i = index
-                "
-              >
-                <div class="thumb-wrapper">
-                  <div class="img-box">
-                    <img [src]="slide.image" [alt]="slide.title" class="img-fluid" />
-                  </div>
-                  <div class="thumb-content">
-                    <h4>{{ slide.title }}</h4>
-                    <p>{{ slide.details }}</p>
-                    <h3>{{ slide.location }}</h3>
-                    <a href="#" class="btn btn-primary" (click)="bookBackpack(slide)">Book Now <i class="fa fa-angle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" (click)="prevSlide('backpack')">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" (click)="nextSlide('backpack')">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+      <app-carousel [slides]="backpacks"></app-carousel>
     </div>
   </div>
+</div>

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const backpackingSchema = new mongoose.Schema({
   image: { type: String, required: true }, // Source URL for the image
   title: { type: String, required: true },
+  price:{ type:String, required:true},
   date: {
     start_date: { type: Date, required: true },
     end_date: { type: Date, required: true },
@@ -18,7 +19,7 @@ const backpackingSchema = new mongoose.Schema({
   ],
   itinerary: [
     {
-      day: { type: Number, required: true },
+      day: { type: String, required: true },
       description: { type: String, required: true },
     },
   ],
@@ -27,13 +28,13 @@ const backpackingSchema = new mongoose.Schema({
     baseVillageTrek: { type: String, required: true },
     region: { type: String, required: true },
     totalTimeOfEvent: { type: Number, required: true }, // Assuming it's in hours
-    duration: { type: Number, required: true }, // Assuming it's in days
+    duration: { type: String, required: true }, // Assuming it's in days
   },
   costInclude: [{ item: { type: String, required: true } }],
   costExclude: [{ item: { type: String, required: true } }],
   thingsToCarry: [{ item: { type: String, required: true } }],
   pickUpPoints: {
-    pune: [{ location: { type: String, required: true } }],
+    pune: [{ location: { type: String, required: false} }],
     mumbai: [{ location: { type: String, required: false } }],
   },
   faqs: [

@@ -12,6 +12,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AddDataComponent } from './add-data/add-data.component';
 import { BookingpageComponent } from './pages/bookingpage/bookingpage.component';
+import { CarouselComponent } from './pages/home/carousel/carousel.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BookingpageComponent } from './pages/bookingpage/bookingpage.component'
     AboutusComponent,
     ContactComponent,
     AddDataComponent,
-    BookingpageComponent
+    BookingpageComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

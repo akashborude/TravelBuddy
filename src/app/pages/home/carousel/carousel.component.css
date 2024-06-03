@@ -1,0 +1,85 @@
+.carousel-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.event-tag {
+  background-color: #ff9800;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.view-all {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.carousel-item.active {
+  display: flex;
+  justify-content: space-around;
+}
+
+.thumb-wrapper {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-box {
+  height: 200px;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-content {
+  padding: 15px;
+  background: #f8f9fa;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.thumb-content h4 {
+  margin: 0 0 10px;
+}
+
+.thumb-content p {
+  margin: 0 0 15px;
+  flex-grow: 1;
+}
+
+.thumb-content .btn {
+  margin-top: 10px;
+}

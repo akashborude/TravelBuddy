@@ -1,45 +1,46 @@
 const mongoose = require("mongoose");
 
 const trekkingSchema = new mongoose.Schema({
-  image: { type: String }, // Source URL for the image
-  title: { type: String },
+  image: { type: String, required: true}, // Source URL for the image
+  title: { type: String, required:true },
+  price:{ type:String, required:true},
   date: {
-    start_date: { type: Date },
-    end_date: { type: Date },
+    start_date: { type: Date, required:true },
+    end_date: { type: Date, required:true },
   },
-  location: { type: String },
-  details: { type: String },
+  location: { type: String, required: true },
+  details: { type: String, required: true },
   upcoming_batches: [
     {
-      date: { type: Date },
-      available_slots: { type: Number },
-      booked_slots: { type: Number },
+      date: { type: Date, required: true },
+      available_slots: { type: Number , required: true },
+      booked_slots: { type: Number , required: true},
     },
   ],
   itinerary: [
     {
-      day: { type: Number },
-      description: { type: String },
+      day: { type: String , required: true},
+      description: { type: String , required: true },
     },
   ],
   trek_event_details: {
-    difficultyLevel: { type: String },
-    baseVillageTrek: { type: String },
-    region: { type: String },
-    totalTimeOfTrek: { type: String }, // Assuming it's in hours
-    duration: { type: String }, // Assuming it's in days
+    difficultyLevel: { type: String, required: true },
+    baseVillageTrek: { type: String, required: true, required: true },
+    region: { type: String, required: true },
+    totalTimeOfTrek: { type: String, required: true }, // Assuming it's in hours
+    duration: { type: String, required: true }, // Assuming it's in days
   },
-  costInclude: [{ item: { type: String } }],
-  costExclude: [{ item: { type: String } }],
-  thingsToCarry: [{ item: { type: String } }],
+  costInclude: [{ item: { type: String, required: true } }],
+  costExclude: [{ item: { type: String, required: true } }],
+  thingsToCarry: [{ item: { type: String, required: true } }],
   pickUpPoints: {
-    pune: [{ location: { type: String } }],
-    mumbai: [{ location: { type: String } }],
+    pune: [{ location: { type: String, required: true } }],
+    mumbai: [{ location: { type: String, required: true } }],
   },
   faqs: [
     {
-      question: { type: String },
-      answer: { type: String },
+      question: { type: String, required: true },
+      answer: { type: String, required: true },
     },
   ],
   // Add more fields as per your requirements

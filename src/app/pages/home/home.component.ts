@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { DataService } from '../../shared/services/data-service/data.service';
 import { BookingService } from 'src/app/shared/services/booking-service/booking.service';
@@ -7,7 +6,7 @@ import { BookingService } from 'src/app/shared/services/booking-service/booking.
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
   treks: any[] = [];
@@ -15,104 +14,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   adventure: any[] = [];
   backpacks: any[] = [];
 
-  currentSlideTrek = 0;
-  currentSlideCamp = 0;
-  currentSlideAdventure = 0;
-  currentSlideBackpack = 0;
-
-  slideIntervalSubscription: Subscription | null = null;
-
   constructor(private dataService: DataService, private router: Router, private bookingService: BookingService) {}
 
   ngOnInit() {
-    this.startSlideInterval();
     this.loadData();
   }
 
-  ngOnDestroy() {
-    this.stopSlideInterval();
-  }
-
-  startSlideInterval() {
-    this.slideIntervalSubscription = interval(5000).subscribe(() => {
-      this.nextSlide('trek');
-      this.nextSlide('camp');
-      this.nextSlide('adventure');
-      this.nextSlide('backpack');
-    });
-  }
-
-  stopSlideInterval() {
-    if (this.slideIntervalSubscription) {
-      this.slideIntervalSubscription.unsubscribe();
-    }
-  }
-
-  nextSlide(category: string) {
-    switch (category) {
-      case 'trek':
-        if (this.currentSlideTrek < this.treks.length - 3) {
-          this.currentSlideTrek++;
-        } else {
-          this.currentSlideTrek = 0;
-        }
-        break;
-      case 'camp':
-        if (this.currentSlideCamp < this.camps.length - 3) {
-          this.currentSlideCamp++;
-        } else {
-          this.currentSlideCamp = 0;
-        }
-        break;
-      case 'adventure':
-        if (this.currentSlideAdventure < this.adventure.length - 3) {
-          this.currentSlideAdventure++;
-        } else {
-          this.currentSlideAdventure = 0;
-        }
-        break;
-      case 'backpack':
-        if (this.currentSlideBackpack < this.backpacks.length - 3) {
-          this.currentSlideBackpack++;
-        } else {
-          this.currentSlideBackpack = 0;
-        }
-        break;
-    }
-  }
-
-  prevSlide(category: string) {
-    switch (category) {
-      case 'trek':
-        if (this.currentSlideTrek > 0) {
-          this.currentSlideTrek--;
-        } else {
-          this.currentSlideTrek = this.treks.length - 3;
-        }
-        break;
-      case 'camp':
-        if (this.currentSlideCamp > 0) {
-          this.currentSlideCamp--;
-        } else {
-          this.currentSlideCamp = this.camps.length - 3;
-        }
-        break;
-      case 'adventure':
-        if (this.currentSlideAdventure > 0) {
-          this.currentSlideAdventure--;
-        } else {
-          this.currentSlideAdventure = this.adventure.length - 3;
-        }
-        break;
-      case 'backpack':
-        if (this.currentSlideBackpack > 0) {
-          this.currentSlideBackpack--;
-        } else {
-          this.currentSlideBackpack = this.backpacks.length - 3;
-        }
-        break;
-    }
-  }
+  ngOnDestroy() {}
 
   loadData() {
     this.dataService.getAllTreks().subscribe((data: any) => {
@@ -131,6 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.backpacks = data;
     });
   }
+
   bookTrek(trekId: any) {
     this.navigateToBookingPage('trek', trekId._id);
   }
