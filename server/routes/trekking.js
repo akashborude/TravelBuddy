@@ -4,6 +4,9 @@ const router = express.Router();
 const Trekking = require("../models/trekking"); // Import the Trekking model
 const createError = require("http-errors");
 
+// Users array
+const users = ["akash.borude", "vaibhavraje.gaikwad", "tejas.gandhi"];
+
 // Get all trekking data
 router.get("/getAllTreks", async (req, res, next) => {
   try {
@@ -30,6 +33,13 @@ router.get("/getTrekById/:id", async (req, res, next) => {
 
 // Create a new trek
 router.post("/addNewTrek", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   console.log(req.body);
   const newTrek = new Trekking(req.body);
   try {
@@ -43,8 +53,19 @@ router.post("/addNewTrek", async (req, res, next) => {
 // Update a trek
 router.put("/updateTrekById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
-    const updatedTrek = await Trekking.findByIdAndUpdate(id, req.body, { new: true });
+    const updatedTrek = await Trekking.findByIdAndUpdate(
+      id,
+      { ...req.body, modifiedBy },
+      { new: true }
+    );
     if (!updatedTrek) {
       return next(createError(404, "Trek not found"));
     }
@@ -57,6 +78,13 @@ router.put("/updateTrekById/:id", async (req, res, next) => {
 // Delete a trek
 router.delete("/deleteTrekById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
     const deletedTrek = await Trekking.findByIdAndDelete(id);
     if (!deletedTrek) {

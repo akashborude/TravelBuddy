@@ -1,35 +1,33 @@
 <div class="carousel-container">
-    <div class="carousel-header">
-      <span class="event-tag"></span>
-      <a href="#" class="view-all">View All</a>
-    </div>
-    <div class="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-md-4" *ngFor="let slide of slides.slice(currentSlideIndex, currentSlideIndex + 3)">
-              <div class="thumb-wrapper">
-                <div class="img-box">
-                  <img [src]="slide.image" [alt]="slide.title" class="img-fluid" />
-                </div>
-                <div class="thumb-content">
-                  <h4>{{ slide.title }}</h4>
-                  <p>{{ slide.description }}</p>
-                  <h3>{{ slide.price }}</h3>
-                  <a href="#" class="btn btn-primary">Book Now <i class="fa fa-angle-right"></i></a>
-                </div>
+  <div class="carousel-header">
+    <a href="#" class="view-all">View All</a>
+  </div>
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let slide of slides.slice(currentSlideIndex, currentSlideIndex + 3)">
+            <div class="card">
+              <div class="card__image">
+                <img [src]="getImageUrl(slide.image)" [alt]="slide.title" class="card-imgs pv delete">
+              </div>
+              <div class="card__content">
+                <p class="card__title">{{ slide.title }}</p>
+                <h3 class="card__price">{{ slide.price }}</h3>
+                <button class="card__button" (click)="bookEvent(slide)">Book Now <i class="fa fa-angle-right"></i></button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" (click)="prevSlide()">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" (click)="nextSlide()">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
+    <a class="carousel-control-prev" (click)="prevSlide()">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" (click)="nextSlide()">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+</div>

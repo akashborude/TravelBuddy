@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../shared/services/data-service/data.service';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { BookingService } from 'src/app/shared/services/booking-service/booking.service';
 
 @Component({
@@ -10,15 +9,23 @@ import { BookingService } from 'src/app/shared/services/booking-service/booking.
 export class BookingpageComponent implements OnInit {
   eventData: any;
   eventType: string = '';
-  eventDetails: any;
 
-  constructor(
-    private dataService: DataService,
-    public bookingService: BookingService
-  ) {}
+  constructor(public bookingService: BookingService) {}
 
   ngOnInit(): void {
-    this.eventData = this.bookingService.eventToBeBooked.eventData;
-    this.eventType = this.bookingService.eventToBeBooked.eventType;
+    const eventToBeBooked = this.bookingService.eventToBeBooked;
+    if (eventToBeBooked) {
+      this.eventData = eventToBeBooked.eventData;
+      this.eventType = eventToBeBooked.eventType;
+    }
+
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }
+
+  // Scroll to the top of the page when the component is loaded
+  @HostListener('window:load', ['$event'])
+  onLoad() {
+    window.scrollTo(0, 0);
   }
 }

@@ -4,6 +4,9 @@ const router = express.Router();
 const Camping = require("../models/camping");
 const createError = require("http-errors");
 
+// Users array
+const users = ["akash.borude", "vaibhavraje.gaikwad", "tejas.gandhi"];
+
 // Get all camping data
 router.get("/getAllCamps", async (req, res, next) => {
   try {
@@ -30,6 +33,13 @@ router.get("/getCampById/:id", async (req, res, next) => {
 
 // Create a new camp
 router.post("/addNewCamp", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   const camp = new Camping(req.body);
   try {
     const newCamp = await camp.save();
@@ -42,8 +52,19 @@ router.post("/addNewCamp", async (req, res, next) => {
 // Update a camp
 router.put("/updateCampById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
-    const updatedCamp = await Camping.findByIdAndUpdate(id, req.body, { new: true });
+    const updatedCamp = await Camping.findByIdAndUpdate(
+      id,
+      { ...req.body, modifiedBy },
+      { new: true }
+    );
     if (!updatedCamp) {
       return next(createError(404, "Camp not found"));
     }
@@ -56,6 +77,13 @@ router.put("/updateCampById/:id", async (req, res, next) => {
 // Delete a camp
 router.delete("/deleteCampById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
     const deletedCamp = await Camping.findByIdAndDelete(id);
     if (!deletedCamp) {

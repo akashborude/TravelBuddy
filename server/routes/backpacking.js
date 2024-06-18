@@ -3,6 +3,9 @@ const router = express.Router();
 const Backpacking = require("../models/backpacking");
 const createError = require("http-errors");
 
+// Users array
+const users = ["akash.borude", "vaibhavraje.gaikwad", "tejas.gandhi"];
+
 // Get all backpacking data
 router.get("/getAllBackpacks", async (req, res, next) => {
   try {
@@ -29,6 +32,13 @@ router.get("/getBackpackById/:id", async (req, res, next) => {
 
 // Create a new backpacking event
 router.post("/addNewBackpacking", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   const backpackingEvent = new Backpacking(req.body);
   try {
     const newBackpackingEvent = await backpackingEvent.save();
@@ -41,10 +51,17 @@ router.post("/addNewBackpacking", async (req, res, next) => {
 // Update a backpacking event
 router.put("/updateBackpackById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
     const updatedBackpackingEvent = await Backpacking.findByIdAndUpdate(
       id,
-      req.body,
+      { ...req.body, modifiedBy },
       { new: true }
     );
     if (!updatedBackpackingEvent) {
@@ -59,6 +76,13 @@ router.put("/updateBackpackById/:id", async (req, res, next) => {
 // Delete a backpacking event
 router.delete("/deleteBackpackById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
     const deletedBackpackingEvent = await Backpacking.findByIdAndDelete(id);
     if (!deletedBackpackingEvent) {

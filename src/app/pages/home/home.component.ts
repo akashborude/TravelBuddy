@@ -40,45 +40,5 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  bookTrek(trekId: any) {
-    this.navigateToBookingPage('trek', trekId._id);
-  }
 
-  bookCamp(campId: any) {
-    this.navigateToBookingPage('camp', campId._id);
-  }
-
-  bookAdventure(adventureId: any) {
-    this.navigateToBookingPage('adventure', adventureId._id);
-  }
-
-  bookBackpack(backpackId: any) {
-    this.navigateToBookingPage('backpack', backpackId._id);
-  }
-
-  async navigateToBookingPage(eventType: string, eventId: string) {
-    let eventData;
-    try {
-      switch (eventType) {
-        case 'trek':
-          eventData = await this.dataService.getTrekById(eventId).toPromise();
-          break;
-        case 'camp':
-          eventData = await this.dataService.getCampById(eventId).toPromise();
-          break;
-        case 'adventure':
-          eventData = await this.dataService.getAdventureById(eventId).toPromise();
-          break;
-        case 'backpack':
-          eventData = await this.dataService.getBackpackById(eventId).toPromise();
-          break;
-        default:
-          throw new Error('Invalid event type');
-      }
-      this.bookingService.eventToBeBooked = { eventType, eventId, eventData };
-      this.router.navigate(['/bookingpage']);
-    } catch (error) {
-      console.error('Error fetching event data:', error);
-    }
-  }
 }

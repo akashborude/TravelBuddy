@@ -1,6 +1,6 @@
 .carousel-container {
   background: #fff;
-  padding: 20px;
+  padding: 20px 40px; /* Increased padding on left and right */
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -22,13 +22,15 @@
 }
 
 .view-all {
-  color: #007bff;
+  color: #000;
   text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-.carousel {
-  position: relative;
+.view-all:hover {
+  color: #555;
 }
 
 .carousel-inner {
@@ -36,50 +38,106 @@
   border-radius: 15px;
 }
 
-.carousel-item.active {
-  display: flex;
-  justify-content: space-around;
-}
-
-.thumb-wrapper {
-  border-radius: 15px;
+.card {
+  width: 100%;
+  height: 400px;
+  margin: 0 10px; /* Reduced margin on left and right */
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.img-box {
-  height: 200px;
+.card__image {
+  height: 60%;
   overflow: hidden;
+  border-radius: 10px 10px 0 0;
 }
 
-.img-box img {
+.card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.thumb-content {
-  padding: 15px;
-  background: #f8f9fa;
-  text-align: center;
-  flex-grow: 1;
+.card__content {
+  height: 40%;
+  padding: 20px;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.thumb-content h4 {
-  margin: 0 0 10px;
+.card__title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.thumb-content p {
-  margin: 0 0 15px;
+.card__text {
+  font-size: 14px;
+  line-height: 1.5;
   flex-grow: 1;
 }
 
-.thumb-content .btn {
-  margin-top: 10px;
+.card__price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
+
+.card__button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card:hover .card__image img {
+  transform: scale(1.2);
+}
+
+/* Carousel Navigation Styles */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev {
+  left: 10px; /* Adjusted left position */
+}
+
+.carousel-control-next {
+  right: 10px; /* Adjusted right position */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+
+
+

@@ -3,6 +3,9 @@ const router = express.Router();
 const Adventours = require("../models/adventurous"); // Import the Adventours model
 const createError = require("http-errors");
 
+// Users array
+const users = ["akash.borude", "vaibhavraje.gaikwad", "tejas.gandhi"];
+
 // Get all adventours data
 router.get("/getAllAdventure", async (req, res, next) => {
   try {
@@ -29,6 +32,13 @@ router.get("/getAdventureById/:id", async (req, res, next) => {
 
 // Create a new adventour
 router.post("/addNewAdventure", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   console.log(req.body);
   const newAdventour = new Adventours(req.body);
   try {
@@ -42,10 +52,21 @@ router.post("/addNewAdventure", async (req, res, next) => {
 // Update an adventour
 router.put("/updateAdventureById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
-    const updatedAdventour = await Adventours.findByIdAndUpdate(id, req.body, {
-      new: true,
-    });
+    const updatedAdventour = await Adventours.findByIdAndUpdate(
+      id,
+      { ...req.body, modifiedBy },
+      {
+        new: true,
+      }
+    );
     if (!updatedAdventour) {
       return next(createError(404, "Adventour not found"));
     }
@@ -58,6 +79,13 @@ router.put("/updateAdventureById/:id", async (req, res, next) => {
 // Delete an adventour
 router.delete("/deleteAdventureById/:id", async (req, res, next) => {
   const id = req.params.id;
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
   try {
     const deletedAdventour = await Adventours.findByIdAndDelete(id);
     if (!deletedAdventour) {
