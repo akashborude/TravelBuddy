@@ -50,6 +50,28 @@ router.post("/addNewTrek", async (req, res, next) => {
   }
 });
 
+// Create multiple new treks
+router.post("/addNewTreks", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
+  try {
+    const createdTreks = [];
+    for (const trekData of req.body.treks) {
+      const newTrek = new Trekking({ ...trekData, modifiedBy });
+      const savedTrek = await newTrek.save();
+      createdTreks.push(savedTrek);
+    }
+    res.status(201).json(createdTreks);
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Update a trek
 router.put("/updateTrekById/:id", async (req, res, next) => {
   const id = req.params.id;

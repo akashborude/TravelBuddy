@@ -6,6 +6,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AddDataComponent } from './add-data/add-data.component';
 import { BookingpageComponent } from './pages/bookingpage/bookingpage.component';
+import { GoogleFormPageComponent } from './pages/google-form-page/google-form-page.component';
+import { ViewAllPageComponent } from './pages/view-all-page/view-all-page.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -13,7 +15,9 @@ const routes: Routes = [
   {path: 'destinations', component: DestinationsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'add-data',component:AddDataComponent},
-  {path: 'bookingpage', component:BookingpageComponent}
+  {path: 'bookingpage', component:BookingpageComponent},
+  {path:'registration-form', component:GoogleFormPageComponent}, 
+  { path: 'view-all', component: ViewAllPageComponent }
 ];
 
 @NgModule({

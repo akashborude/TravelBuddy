@@ -13,6 +13,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AddDataComponent } from './add-data/add-data.component';
 import { BookingpageComponent } from './pages/bookingpage/bookingpage.component';
 import { CarouselComponent } from './pages/home/carousel/carousel.component';
+import { GoogleFormPageComponent } from './pages/google-form-page/google-form-page.component';
+import { ViewAllPageComponent } from './pages/view-all-page/view-all-page.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { CarouselComponent } from './pages/home/carousel/carousel.component';
     ContactComponent,
     AddDataComponent,
     BookingpageComponent,
-    CarouselComponent
+    CarouselComponent,
+    GoogleFormPageComponent,
+    ViewAllPageComponent
   ],
   imports: [
     BrowserModule,

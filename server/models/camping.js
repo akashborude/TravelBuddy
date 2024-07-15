@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const campingSchema = new mongoose.Schema({
-  image: { type: String, required: true }, // Source URL for the image
+  image: {
+    imageUrl: { type: String, required: true },
+    imageSrc: { type: String, required: true },
+  }, // Source URL for the image
   title: { type: String, required: true },
   price:{ type:String, required:true},
   date: {

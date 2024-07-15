@@ -49,6 +49,28 @@ router.post("/addNewCamp", async (req, res, next) => {
   }
 });
 
+// Create multiple new camps
+router.post("/addNewCamps", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
+  try {
+    const createdCamps = [];
+    for (const campData of req.body.camps) {
+      const newCamp = new Camping({ ...campData, modifiedBy });
+      const savedCamp = await newCamp.save();
+      createdCamps.push(savedCamp);
+    }
+    res.status(201).json(createdCamps);
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Update a camp
 router.put("/updateCampById/:id", async (req, res, next) => {
   const id = req.params.id;

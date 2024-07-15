@@ -49,6 +49,28 @@ router.post("/addNewAdventure", async (req, res, next) => {
   }
 });
 
+// Create multiple new adventours
+router.post("/addNewAdventures", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
+  try {
+    const createdAdventures = [];
+    for (const adventureData of req.body.adventures) {
+      const newAdventure = new Adventours({ ...adventureData, modifiedBy });
+      const savedAdventure = await newAdventure.save();
+      createdAdventures.push(savedAdventure);
+    }
+    res.status(201).json(createdAdventures);
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Update an adventour
 router.put("/updateAdventureById/:id", async (req, res, next) => {
   const id = req.params.id;

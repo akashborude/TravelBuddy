@@ -1,67 +1,102 @@
 .trek-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .content {
-    flex: 1 1 60%;
-  }
-  
-  .sidebar {
-    flex: 1 1 30%;
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.content {
+  flex: 1 1 60%;
+}
+
+.sidebar {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.image {
+  width: 100%;
+  max-height: 250px; /* Limit max height of the image */
+  overflow: hidden; /* Ensure overflow is hidden */
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure image covers the container */
+  border-radius: 9px;
+}
+
+.card-content {
+  padding: 1em;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1em;
+  color: #000;
+  margin-bottom: 0.5em;
+}
+
+.date {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 0.5em;
+}
+
+.book-container {
+  width: 100%;
+}
+
+.book-now {
+  width: 100%;
+  padding: 1em;
+  background: #00ac7c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.book-now:hover {
+  background-color: darkorange;
+}
+
+@media (max-width: 768px) {
+  .trek-details {
     flex-direction: column;
-    gap: 20px;
   }
-  
-  .card {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .content,
+  .sidebar {
+    flex: 1 1 100%;
   }
-  
-  .price {
-    font-size: 24px;
-    font-weight: bold;
-    color: green;
-  }
-  
-  .date {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  .book-now {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: orange;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .book-now:hover {
-    background-color: darkorange;
-  }
-  
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  @media (max-width: 768px) {
-    .trek-details {
-      flex-direction: column;
-    }
-  
-    .content, .sidebar {
-      flex: 1 1 100%;
-    }
-  }
-  
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>{{eventTitle}}</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let slide of slides">
+        <div class="card">
+          <div class="card__image">
+            <a [href]="slide.image.imageUrl">
+              <img [src]="slide.image.imageSrc" [alt]="slide.title" [border]="0" class="card-imgs pv delete">
+            </a>
+          </div>
+          <div class="card__content">
+            <p class="card__title">{{ slide.title }}</p>
+            <h3 class="card__price">{{ slide.price }}</h3>
+            <button class="card__button" (click)="bookEvent(slide)">
+              Book Now <i class="fa fa-angle-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

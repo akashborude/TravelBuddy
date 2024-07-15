@@ -48,6 +48,28 @@ router.post("/addNewBackpacking", async (req, res, next) => {
   }
 });
 
+// Create multiple new backpacking events
+router.post("/addNewBackpackingEvents", async (req, res, next) => {
+  const modifiedBy = req.body.modifiedBy;
+
+  // Check if the user is authorized to modify the data
+  if (!users.includes(modifiedBy)) {
+    return next(createError(403, "You are not authorized to modify the data"));
+  }
+
+  try {
+    const createdBackpackingEvents = [];
+    for (const backpackingEventData of req.body.backpackingEvents) {
+      const newBackpackingEvent = new Backpacking({ ...backpackingEventData, modifiedBy });
+      const savedBackpackingEvent = await newBackpackingEvent.save();
+      createdBackpackingEvents.push(savedBackpackingEvent);
+    }
+    res.status(201).json(createdBackpackingEvents);
+  } catch (error) {
+    next(error);
+  }
+});
+
 // Update a backpacking event
 router.put("/updateBackpackById/:id", async (req, res, next) => {
   const id = req.params.id;

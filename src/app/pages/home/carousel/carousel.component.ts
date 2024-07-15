@@ -2,6 +2,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { BookingService } from 'src/app/shared/services/booking-service/booking.service';
+import { SlidesService } from 'src/app/shared/services/slides-service/slides.service';
 
 @Component({
   selector: 'app-carousel',
@@ -13,7 +14,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   currentSlideIndex: number = 0;
   slideIntervalSubscription: Subscription | null = null;
 
-  constructor(private router: Router, private bookingService: BookingService) {}
+  constructor(private router: Router, private bookingService: BookingService, private slidesService: SlidesService) {}
 
   ngOnInit() {
     this.startSlideInterval();
@@ -98,11 +99,31 @@ export class CarouselComponent implements OnInit, OnDestroy {
     this.navigateToBookingPage(event.eventType, event._id, event);
   }
 
-  getImageUrl(html: string): string {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const imgElement = doc.querySelector('img');
-    return imgElement ? imgElement.src : '';
+  getEventTitle(): string {
+    if (this.slides.length > 0) {
+      const eventType = this.getEventType(this.slides[0]);
+      switch (eventType) {
+        case 'trek':
+          return 'Upcoming Treks';
+        case 'camp':
+          return 'Upcoming Camps';
+        case 'adventure':
+          return 'Upcoming Adventures';
+        case 'backpack':
+          return 'Upcoming Backpack Trips';
+        default:
+          return 'Upcoming Events';
+      }
+    }
+    return 'Upcoming Events';
+  }
+
+  viewAll(event: Event) {
+    event.preventDefault();
+    const eventTitle = this.getEventTitle();
+    console.log(this.slides);
+    this.slidesService.setSlides(this.slides, eventTitle);
+    this.router.navigate(['/view-all']);
   }
 
   async navigateToBookingPage(eventType: string, eventId: string, eventData: any) {

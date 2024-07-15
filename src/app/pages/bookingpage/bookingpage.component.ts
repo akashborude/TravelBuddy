@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookingService } from 'src/app/shared/services/booking-service/booking.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class BookingpageComponent implements OnInit {
   eventData: any;
   eventType: string = '';
 
-  constructor(public bookingService: BookingService) {}
+  constructor(private router: Router, public bookingService: BookingService) {}
 
   ngOnInit(): void {
     const eventToBeBooked = this.bookingService.eventToBeBooked;
@@ -23,9 +24,12 @@ export class BookingpageComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  // Scroll to the top of the page when the component is loaded
-  @HostListener('window:load', ['$event'])
-  onLoad() {
-    window.scrollTo(0, 0);
+  redirectToForm(registrationLink: string) {
+    try {
+      this.bookingService.eventToBeRegistered = registrationLink;
+      this.router.navigate(['/registration-form']);
+    } catch (error) {
+      console.error('Error navigating to booking page:', error);
+    }
   }
 }

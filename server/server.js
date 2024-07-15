@@ -48,7 +48,7 @@ app.options("*", cors());
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/TravelBuddy", {
+  .connect("mongodb+srv://teamtravelbuddypune:iQwQ7SkZVbeF32aV@cluster0.o0jccgf.mongodb.net/TravelBuddy", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -62,6 +62,7 @@ mongoose
 
 // Routes for Trekking
 app.post("/addNewTrek", require("./routes/trekking"));
+app.post("/addNewTreks", require("./routes/trekking")); // New route
 app.get("/getAllTreks", require("./routes/trekking"));
 app.get("/getTrekById/:id", require("./routes/trekking"));
 app.put("/updateTrekById/:id", require("./routes/trekking"));
@@ -69,6 +70,7 @@ app.delete("/deleteTrekById/:id", require("./routes/trekking"));
 
 // Routes for Camping
 app.post("/addNewCamp", require("./routes/camping"));
+app.post("/addNewCamps", require("./routes/camping")); // New route
 app.get("/getAllCamps", require("./routes/camping"));
 app.get("/getCampById/:id", require("./routes/camping"));
 app.put("/updateCampById/:id", require("./routes/camping"));
@@ -76,6 +78,7 @@ app.delete("/deleteCampById/:id", require("./routes/camping"));
 
 // Routes for Adventurous Activities
 app.post("/addNewAdventure", require("./routes/adventurous"));
+app.post("/addNewAdventures", require("./routes/adventurous")); // New route
 app.get("/getAllAdventure", require("./routes/adventurous"));
 app.get("/getAdventureById/:id", require("./routes/adventurous"));
 app.put("/updateAdventureById/:id", require("./routes/adventurous"));
@@ -83,6 +86,7 @@ app.delete("/deleteAdventureById/:id", require("./routes/adventurous"));
 
 // Routes for Backpacking
 app.post("/addNewBackpacking", require("./routes/backpacking"));
+app.post("/addNewBackpackingEvents", require("./routes/backpacking")); // New route
 app.get("/getAllBackpacks", require("./routes/backpacking"));
 app.get("/getBackpackById/:id", require("./routes/backpacking"));
 app.put("/updateBackpackById/:id", require("./routes/backpacking"));

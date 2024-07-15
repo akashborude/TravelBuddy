@@ -9,6 +9,8 @@ export class BookingService {
     eventId: '',
     eventData: {},
   };
+
+  eventToBeRegistered: string = '';
   constructor() {}
 
   bookTrek(trekData: any) {
