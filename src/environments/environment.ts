@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  travelBuddyServerUrl: 'http://localhost:3000',
+  travelBuddyServerUrl: 'https://6694f2d6951df565451e05a9--subtle-biscotti-9492ed.netlify.app',
 };
 
 /*
