@@ -1,0 +1,39 @@
+[build]
+  functions = "functions"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/api/trekking/*"
+  to = "/.netlify/functions/trekking/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/camping/*"
+  to = "/.netlify/functions/camping/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/adventure/*"
+  to = "/.netlify/functions/adventure/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/backpacking/*"
+  to = "/.netlify/functions/backpacking/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"
